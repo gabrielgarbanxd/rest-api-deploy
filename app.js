@@ -5,6 +5,7 @@ import { randomUUID } from 'node:crypto';
 import movies from './movies.json';
 import { validateMovie, validatePartialMovie } from './schemas/movies';
 
+console.log();
 const app = express();
 app.use(json());
 app.use(
