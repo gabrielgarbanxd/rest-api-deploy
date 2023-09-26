@@ -1,10 +1,10 @@
-import express, { json } from 'express'; // require -> commonJS
+import express, { json } from 'express';
 import { corsMiddlewaree } from './middlewares/cors.js';
 import { moviesRouter } from './routes/movies.js';
 
 const app = express();
 app.use(json());
-app.use(corsMiddlewaree);
+app.use(corsMiddlewaree());
 app.disable('x-powered-by'); // deshabilitar el header X-Powered-By: Express
 
 app.use('/movies', moviesRouter);

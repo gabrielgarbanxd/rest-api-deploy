@@ -34,7 +34,7 @@ export class MovieController {
 
     const result = await MovieModel.delete({ id });
 
-    if (!result) {
+    if (result === false) {
       return res.status(404).json({ message: 'Movie not found' });
     }
 
@@ -50,8 +50,8 @@ export class MovieController {
 
     const { id } = req.params;
 
-    const updateMovie = await MovieModel.update({ id, input: result.data });
+    const updatedMovie = await MovieModel.update({ id, input: result.data });
 
-    return res.json(updateMovie);
+    return res.json(updatedMovie);
   }
 }
